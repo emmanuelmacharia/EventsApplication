@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 //Component Imports
 import { EventsAppComponent } from './events-app.component';
@@ -13,7 +14,7 @@ import {
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
+  // EventRouteActivator,
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
@@ -21,6 +22,7 @@ import {
   UpvoteComponent,
   VoterService,
   LocationValidator,
+  EventResolver
 } from './events/index'
 import { NavBarComponent } from './nav/index'
 import { TOASTR_TOKEN, CollapsibleWell, JQ_TOKEN, Toastr, SimpleModal, ModalTriggerDirective } from './common/index';
@@ -35,7 +37,8 @@ let jQuery = window['$']
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [  //we need to register every component to this list of declarations
     NavBarComponent,
@@ -63,7 +66,8 @@ let jQuery = window['$']
     {
       provide: JQ_TOKEN, useValue:jQuery
     },
-    EventRouteActivator,
+    // EventRouteActivator,
+    EventResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState

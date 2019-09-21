@@ -8,6 +8,6 @@ import { EventService } from './events.service';
 export class EventListResolver implements Resolve<any>{
   constructor(private eventService:EventService){}
   resolve(){
-    return this.eventService.getEvents().pipe(map(events => events))
+    return this.eventService.getEvents()
   }
 }
