@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ISession } from '../shared';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 @Injectable()
 export class VoterService{

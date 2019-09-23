@@ -3,7 +3,7 @@ import { IUser } from './user.model'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { userInfo } from 'os';
+
 
 @Injectable()
 export class AuthService{
